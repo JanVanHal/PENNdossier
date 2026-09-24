@@ -1,3 +1,5 @@
+# README.md
+
 > ⚠️ **WAARSCHUWING: TEST VERSIE**
 > Deze gecombineerde **Porsche & Nissan Dossier Manager** is een **TEST VERSIE**.
 > 
@@ -33,18 +35,25 @@ Dit is een gecombineerde webapplicatie (single-file HTML) voor het beheren en ve
 
 De applicatie kan op twee manieren worden gebruikt:
 
-### 1. Direct gebruiken via de computer (Offline / Lokaal)
+### 1. Installeren als Progressive Web App (PWA) — *Aanbevolen voor het beste gebruik!*
+Wanneer de pagina gehost wordt via GitHub Pages (of een andere HTTPS-verbinding) is installatie als PWA de sterkst aanbevolen methode:
+
+> 💡 **Waarom PWA?**
+> Bij gebruik van de geïnstalleerde PWA blijven externe zoekopdrachten (zoals **Google Maps**, **Google Zoeken** en de **RDW Kentekencheck**) openen in je standaard browser (zoals Chrome of Edge) in plaats van binnen het geïsoleerde PWA-venster zelf. Hierdoor behoud je een schone, opgeruimde werkomgeving in je dossier-app, terwijl opzoeksites netjes in je browser-tabbladen verschijnen.
+
+**Hoe te installeren:**
+- **Desktop (Chrome/Edge)**: Klik op het installatie-icoon aan de rechterkant van de adresbalk (of ga naar het menu `...` > *App installeren / Toepassing installeren*).
+- **Mobiel / Tablet (iOS/Android)**: 
+  - **Safari (iOS)**: Tik op de *Delen*-knop en kies **'Zet op beginstcherm'**.
+  - **Chrome (Android)**: Tik op het menu met drie puntjes en kies **'Toevoegen aan startscherm'** of **'App installeren'**.
+
+---
+
+### 2. Lokaal gebruiken via de computer (Offline / Los HTML-bestand)
 1. Download het bestand `index.html`.
 2. Sla het op een gewenste locatie op je PC op.
-3. Dubbelklik op het bestand om het direct te openen in een browser (Chrome, Edge, Safari, Firefox). 
-   *Er is geen internetverbinding of webserver nodig.*
-
-### 2. Installeren als Progressive Web App (PWA)
-Als de pagina wordt gehost via GitHub Pages (of een HTTPS-verbinding):
-- **Desktop (Chrome/Edge)**: Klik op het installatie-icoon aan de rechterkant van de adresbalk (of ga naar het menu `...` > *App installeren*) om de applicatie als een losse desktop-app te installeren.
-- **Mobiel / Tablet (iOS/Android)**: 
-  - **Safari (iOS)**: Tik op de *Delen*-knop en kies **'Zet op begintestcherm'**.
-  - **Chrome (Android)**: Tik op het menu met drie puntjes en kies **'Toevoegen aan startscherm'** of **'App installeren'**.
+3. Dubbelklik op het bestand om het direct te openen in je favoriete browser. 
+   *Er is geen internetverbinding of webserver nodig om dossiers aan te maken of op te slaan.*
 
 ---
 
