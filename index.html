@@ -29,8 +29,8 @@
 
             --accent-porsche: #5645d4;
             --accent-porsche-light: #ede9fb;
-            --accent-nissan:  #003087;
-            --accent-nissan-light: #e6ecf5;
+            --accent-nissan:  #0055b8;
+            --accent-nissan-light: #e6f0fa;
 
             --accent:        var(--accent-porsche);
             --accent-light:  var(--accent-porsche-light);
@@ -53,6 +53,8 @@
         .brand-nissan {
             --accent:        var(--accent-nissan);
             --accent-light:  var(--accent-nissan-light);
+            --red:           #0055b8;
+            --red-light:     #e6f0fa;
         }
 
         .dark {
@@ -68,8 +70,8 @@
 
             --accent-porsche: #9385f5;
             --accent-porsche-light: #2d2859;
-            --accent-nissan:  #649bf0;
-            --accent-nissan-light: #1a2e54;
+            --accent-nissan:  #4a90e2;
+            --accent-nissan-light: #162a45;
 
             --red:           #ff6b6b;
             --red-light:     #331b1b;
@@ -86,6 +88,11 @@
             --modal-overlay: rgba(0,0,0,0.6);
         }
 
+        .dark.brand-nissan {
+            --red:           #4a90e2;
+            --red-light:     #162a45;
+        }
+
         .medium {
             --canvas:        #2c2c2a;
             --surface:       #363633;
@@ -99,8 +106,8 @@
 
             --accent-porsche: #9d91f5;
             --accent-porsche-light: #342e5c;
-            --accent-nissan:  #5288e0;
-            --accent-nissan-light: #1e3352;
+            --accent-nissan:  #4a90e2;
+            --accent-nissan-light: #1c2d42;
 
             --red:           #ff6b6b;
             --red-light:     #382020;
@@ -115,6 +122,11 @@
             --shadow-md:     0 4px 16px rgba(0,0,0,0.28);
             --shadow-lg:     0 8px 32px rgba(0,0,0,0.36);
             --modal-overlay: rgba(0,0,0,0.5);
+        }
+
+        .medium.brand-nissan {
+            --red:           #4a90e2;
+            --red-light:     #1c2d42;
         }
 
         html, body { height: 100%; }
@@ -172,7 +184,7 @@
 
         .brand-btn.active[data-brand="porsche"] {
             background: var(--canvas);
-            color: var(--red);
+            color: var(--accent-porsche);
             box-shadow: var(--shadow-sm);
         }
 
@@ -625,7 +637,7 @@
             <button type="button" class="brand-btn" data-brand="nissan" onclick="switchBrand('nissan')">Nissan</button>
         </div>
         <div class="topbar-crumbs">
-            <span class="crumb" id="brandCrumbTitle"><span style="color:var(--red);font-weight:600;">Porsche</span> Assistance</span>
+            <span class="crumb" id="brandCrumbTitle"><span style="color:var(--accent-porsche);font-weight:600;">Porsche</span> Assistance</span>
             <span class="crumb-sep">/</span>
             <span class="crumb-active" id="topbarCrumb">Nieuw dossier</span>
         </div>
@@ -911,7 +923,6 @@
         let dossiers = [];
         let activeId = null;
 
-        // Originele CSV kolom-volgorde (1:1 uit originele apps voor volledige uitwisselbaarheid)
         const csvFields  = ['entryId','dossierNummer','timestamp','naamAbo','telAbo','adresAbo','typePorsche','kenteken','vin','locatie','porscheCentrum','contactPc','probleem','oplossing','kmStand'];
         const formFields = ['dossierNummer','timestamp','naamAbo','telAbo','adresAbo','typePorsche','kenteken','vin','locatie','porscheCentrum','contactPc','probleem','oplossing','kmStand'];
         const ucFields   = ['dossierNummer','naamAbo','telAbo','adresAbo','kenteken','vin','locatie','contactPc','kmStand','searchInput'];
@@ -972,7 +983,7 @@
 
             const brandCrumb = document.getElementById('brandCrumbTitle');
             if (brand === 'porsche') {
-                brandCrumb.innerHTML = '<span style="color:var(--red);font-weight:600;">Porsche</span> Assistance';
+                brandCrumb.innerHTML = '<span style="color:var(--accent-porsche);font-weight:600;">Porsche</span> Assistance';
             } else {
                 brandCrumb.innerHTML = '<span style="color:var(--accent-nissan);font-weight:600;">Nissan</span> Assistance';
             }
@@ -1338,7 +1349,6 @@
             reader.onload = ev => {
                 try {
                     const lines = ev.target.result.split(/\r?\n/).filter(l=>l.trim());
-                    // 1:1 import gebaseerd op de originele kolom-volgorde
                     const imported = lines.slice(1).map(line => {
                         const parts=[]; let field=''; let inQ=false;
                         for (let i=0;i<line.length;i++) {
@@ -1348,7 +1358,6 @@
                         }
                         parts.push(field);
 
-                        // Wijs geïmporteerde dossiers automatisch toe aan het momenteel actieve merk
                         const obj = { created: new Date().toISOString(), brand: activeBrand };
                         csvFields.forEach((f, i) => {
                             if (f === 'entryId') obj.id = parts[i] || (Date.now().toString() + Math.random());
