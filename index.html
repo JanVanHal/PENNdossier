@@ -973,14 +973,41 @@
             if (brand === activeBrand) return;
 
             if (checkDirty && isDirty()) {
-                showConfirm('Merk Wisselen', 'Er zijn onafgedrukte wijzigingen. Wilt u opslaan voor het wisselen?', () => {
-                    handleSave(true);
-                    executeBrandSwitch(brand);
-                }, 'Niet opslaan', 'Ja, Opslaan', '⚠️');
-                document.getElementById('modalBtnSecondary').onclick = () => {
-                    executeBrandSwitch(brand);
-                    closeModal();
-                };
+                const nummerEl = document.getElementById('dossierNummer');
+                const nummer = (nummerEl ? nummerEl.value : '').trim();
+
+                // Blokkeer de wissel als er gegevens zijn ingevoerd maar het dossiernummer ontbreekt
+                if (!nummer) {
+                    checkNummerField();
+                    if (nummerEl) nummerEl.focus();
+                    showConfirm(
+                        'Dossiernummer vereist',
+                        'U bent een dossier aan het invullen. Vul eerst een dossiernummer in om het dossier op te kunnen slaan voordat u van merk kunt wisselen.',
+                        () => {
+                            if (nummerEl) nummerEl.focus();
+                        },
+                        'Annuleren',
+                        'Dossiernummer invullen',
+                        '⚠️'
+                    );
+                    showToast('Vul eerst het dossiernummer in');
+                    return;
+                }
+
+                // Vraag om opslaan met vermelding van het dossiernummer; wissel pas na opslaan
+                const brandNaam = brand === 'porsche' ? 'Porsche' : 'Nissan';
+                showConfirm(
+                    'Merk Wisselen',
+                    `Wilt u dossier "${nummer}" opslaan voordat u overschakelt naar ${brandNaam}?`,
+                    () => {
+                        const id = document.getElementById('entryId').value || Date.now().toString();
+                        executeSave(id);
+                        executeBrandSwitch(brand);
+                    },
+                    'Annuleren',
+                    'Ja, Opslaan & Wisselen',
+                    '💾'
+                );
                 return;
             }
 
