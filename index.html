@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" class="h-full">
+<html lang="nl" class="h-full brand-porsche">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,106 +15,117 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --scale:         1;
+            --scale:                 1;
 
-            --canvas:        #ffffff;
-            --surface:       #f7f7f5;
-            --border:        #e9e9e7;
-            --border-strong: #d4d4cf;
+            --canvas:                #ffffff;
+            --surface:               #f7f7f5;
+            --border:                #e9e9e7;
+            --border-strong:         #d4d4cf;
 
-            --ink:           #37352f;
-            --ink-light:     #6b6b68;
-            --ink-muted:     #8a8985;
-            --ink-faint:     #a8a7a3;
+            --ink:                   #37352f;
+            --ink-light:             #6b6b68;
+            --ink-muted:             #8a8985;
+            --ink-faint:             #a8a7a3;
 
-            --accent-porsche: #5645d4;
-            --accent-porsche-light: #ede9fb;
-            --accent-nissan:  #0055b8;
-            --accent-nissan-light: #e6f0fa;
+            /* Porsche = Rood */
+            --accent-porsche:        #d5001c;
+            --accent-porsche-light:  #fdf0f0;
 
-            --accent:        var(--accent-porsche);
-            --accent-light:  var(--accent-porsche-light);
+            /* Nissan = Blauw */
+            --accent-nissan:         #0055b8;
+            --accent-nissan-light:   #eaf2fa;
 
-            --red:           #e03131;
-            --red-light:     #fff0f0;
-            --orange:        #dd5b00;
-            --orange-light:  #fff3e8;
-            --green:         #1aae39;
-            --green-light:   #e8f7ec;
-            --blue-light:    #dde8f2;
-            --blue:          #4a7a9b;
+            /* Actieve accenten (standaard Porsche) */
+            --accent:                var(--accent-porsche);
+            --accent-light:          var(--accent-porsche-light);
 
-            --shadow-sm:     0 1px 3px rgba(55,53,47,0.07);
-            --shadow-md:     0 4px 16px rgba(55,53,47,0.10);
-            --shadow-lg:     0 8px 32px rgba(55,53,47,0.13);
-            --modal-overlay: rgba(55,53,47,0.35);
+            --red:                   #e03131;
+            --red-light:             #fff0f0;
+            --orange:                #dd5b00;
+            --orange-light:          #fff3e8;
+            --green:                 #1aae39;
+            --green-light:           #e8f7ec;
+            --blue-light:            #dde8f2;
+            --blue:                  #4a7a9b;
+
+            --shadow-sm:             0 1px 3px rgba(55,53,47,0.07);
+            --shadow-md:             0 4px 16px rgba(55,53,47,0.10);
+            --shadow-lg:             0 8px 32px rgba(55,53,47,0.13);
+            --modal-overlay:         rgba(55,53,47,0.35);
+        }
+
+        .brand-porsche {
+            --accent:                var(--accent-porsche);
+            --accent-light:          var(--accent-porsche-light);
         }
 
         .brand-nissan {
-            --accent:        var(--accent-nissan);
-            --accent-light:  var(--accent-nissan-light);
+            --accent:                var(--accent-nissan);
+            --accent-light:          var(--accent-nissan-light);
         }
 
         .dark {
-            --canvas:        #191919;
-            --surface:       #222222;
-            --border:        #2f2f2f;
-            --border-strong: #444444;
+            --canvas:                #191919;
+            --surface:               #222222;
+            --border:                #2f2f2f;
+            --border-strong:         #444444;
 
-            --ink:           #f3f3f0;
-            --ink-light:     #d0d0cc;
-            --ink-muted:     #b0b0aa;
-            --ink-faint:     #8e8e88;
+            --ink:                   #f3f3f0;
+            --ink-light:             #d0d0cc;
+            --ink-muted:             #b0b0aa;
+            --ink-faint:             #8e8e88;
 
-            --accent-porsche: #9385f5;
-            --accent-porsche-light: #2d2859;
-            --accent-nissan:  #4a90e2;
-            --accent-nissan-light: #162a45;
+            --accent-porsche:        #ff6b6b;
+            --accent-porsche-light:  #341b1d;
 
-            --red:           #ff6b6b;
-            --red-light:     #331b1b;
-            --orange:        #ff922b;
-            --orange-light:  #332212;
-            --green:         #51cf66;
-            --green-light:   #182e1c;
-            --blue-light:    #1c2d3d;
-            --blue:          #74c0fc;
+            --accent-nissan:         #5ba0f5;
+            --accent-nissan-light:   #16263b;
 
-            --shadow-sm:     0 1px 3px rgba(0,0,0,0.3);
-            --shadow-md:     0 4px 16px rgba(0,0,0,0.4);
-            --shadow-lg:     0 8px 32px rgba(0,0,0,0.5);
-            --modal-overlay: rgba(0,0,0,0.6);
+            --red:                   #ff6b6b;
+            --red-light:             #331b1b;
+            --orange:                #ff922b;
+            --orange-light:          #332212;
+            --green:                 #51cf66;
+            --green-light:           #182e1c;
+            --blue-light:            #1c2d3d;
+            --blue:                  #74c0fc;
+
+            --shadow-sm:             0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md:             0 4px 16px rgba(0,0,0,0.4);
+            --shadow-lg:             0 8px 32px rgba(0,0,0,0.5);
+            --modal-overlay:         rgba(0,0,0,0.6);
         }
 
         .medium {
-            --canvas:        #2c2c2a;
-            --surface:       #363633;
-            --border:        #484845;
-            --border-strong: #5e5e5a;
+            --canvas:                #2c2c2a;
+            --surface:               #363633;
+            --border:                #484845;
+            --border-strong:         #5e5e5a;
 
-            --ink:           #f0ede6;
-            --ink-light:     #cdcac2;
-            --ink-muted:     #aba8a0;
-            --ink-faint:     #8a8780;
+            --ink:                   #f0ede6;
+            --ink-light:             #cdcac2;
+            --ink-muted:             #aba8a0;
+            --ink-faint:             #8a8780;
 
-            --accent-porsche: #9d91f5;
-            --accent-porsche-light: #342e5c;
-            --accent-nissan:  #4a90e2;
-            --accent-nissan-light: #1c2d42;
+            --accent-porsche:        #ff5e62;
+            --accent-porsche-light:  #3b2022;
 
-            --red:           #ff6b6b;
-            --red-light:     #382020;
-            --orange:        #ffa94d;
-            --orange-light:  #382618;
-            --green:         #51cf66;
-            --green-light:   #1d3322;
-            --blue-light:    #223445;
-            --blue:          #74c0fc;
+            --accent-nissan:         #4a90e2;
+            --accent-nissan-light:   #1c2d42;
 
-            --shadow-sm:     0 1px 3px rgba(0,0,0,0.2);
-            --shadow-md:     0 4px 16px rgba(0,0,0,0.28);
-            --shadow-lg:     0 8px 32px rgba(0,0,0,0.36);
-            --modal-overlay: rgba(0,0,0,0.5);
+            --red:                   #ff6b6b;
+            --red-light:             #382020;
+            --orange:                #ffa94d;
+            --orange-light:          #382618;
+            --green:                 #51cf66;
+            --green-light:           #1d3322;
+            --blue-light:            #223445;
+            --blue:                  #74c0fc;
+
+            --shadow-sm:             0 1px 3px rgba(0,0,0,0.2);
+            --shadow-md:             0 4px 16px rgba(0,0,0,0.28);
+            --shadow-lg:             0 8px 32px rgba(0,0,0,0.36);
+            --modal-overlay:         rgba(0,0,0,0.5);
         }
 
         html, body { height: 100%; }
@@ -172,7 +183,7 @@
 
         .brand-btn.active[data-brand="porsche"] {
             background: var(--canvas);
-            color: var(--red);
+            color: var(--accent-porsche);
             box-shadow: var(--shadow-sm);
         }
 
@@ -283,11 +294,16 @@
         }
         .btn-primary:hover { opacity: 0.88; }
 
+        /* Knop WIS: kleurt mee met de actieve merkkleur */
         .btn-danger {
             background: transparent;
-            color: var(--red);
+            color: var(--accent);
+            border: 1px solid transparent;
         }
-        .btn-danger:hover { background: var(--red-light); }
+        .btn-danger:hover {
+            background: var(--accent-light);
+            border-color: transparent;
+        }
 
         .divider {
             height: 1px;
@@ -371,7 +387,19 @@
         .n-input::placeholder { color: var(--ink-faint); }
         .n-input[readonly] { cursor: default; color: var(--ink-muted); }
         .n-input[readonly]:focus { box-shadow: none; }
-        .n-input.input-error, .n-input.error { box-shadow: inset 0 0 0 1px var(--red); }
+
+        /* Veld NUMMER kader kleurt dynamisch mee met het actieve merk */
+        #dossierNummer {
+            box-shadow: inset 0 0 0 1px var(--accent);
+            background: var(--surface);
+        }
+        #dossierNummer:focus {
+            box-shadow: inset 0 0 0 2px var(--accent);
+            background: var(--canvas);
+        }
+        .n-input.input-error, .n-input.error {
+            box-shadow: inset 0 0 0 1.5px var(--accent) !important;
+        }
 
         .force-uppercase { text-transform: uppercase; }
 
@@ -625,7 +653,7 @@
             <button type="button" class="brand-btn" data-brand="nissan" onclick="switchBrand('nissan')">Nissan</button>
         </div>
         <div class="topbar-crumbs">
-            <span class="crumb" id="brandCrumbTitle"><span style="color:var(--red);font-weight:600;">Porsche</span> Assistance</span>
+            <span class="crumb" id="brandCrumbTitle"><span style="color:var(--accent-porsche);font-weight:600;">Porsche</span> Assistance</span>
             <span class="crumb-sep">/</span>
             <span class="crumb-active" id="topbarCrumb">Nieuw dossier</span>
         </div>
@@ -662,7 +690,7 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                 Kopieer
             </button>
-            <button class="btn btn-danger" onclick="deleteActive()">
+            <button class="btn btn-danger" onclick="deleteActive()" title="Actief dossier wissen">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                 Wis
             </button>
@@ -967,11 +995,13 @@
                 btn.classList.toggle('active', btn.dataset.brand === brand);
             });
 
+            // Toggle CSS classes voor correcte accenten
             document.documentElement.classList.toggle('brand-nissan', brand === 'nissan');
+            document.documentElement.classList.toggle('brand-porsche', brand === 'porsche');
 
             const brandCrumb = document.getElementById('brandCrumbTitle');
             if (brand === 'porsche') {
-                brandCrumb.innerHTML = '<span style="color:var(--red);font-weight:600;">Porsche</span> Assistance';
+                brandCrumb.innerHTML = '<span style="color:var(--accent-porsche);font-weight:600;">Porsche</span> Assistance';
             } else {
                 brandCrumb.innerHTML = '<span style="color:var(--accent-nissan);font-weight:600;">Nissan</span> Assistance';
             }
