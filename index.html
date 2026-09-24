@@ -53,8 +53,6 @@
         .brand-nissan {
             --accent:        var(--accent-nissan);
             --accent-light:  var(--accent-nissan-light);
-            --red:           #0055b8;
-            --red-light:     #e6f0fa;
         }
 
         .dark {
@@ -88,11 +86,6 @@
             --modal-overlay: rgba(0,0,0,0.6);
         }
 
-        .dark.brand-nissan {
-            --red:           #4a90e2;
-            --red-light:     #162a45;
-        }
-
         .medium {
             --canvas:        #2c2c2a;
             --surface:       #363633;
@@ -122,11 +115,6 @@
             --shadow-md:     0 4px 16px rgba(0,0,0,0.28);
             --shadow-lg:     0 8px 32px rgba(0,0,0,0.36);
             --modal-overlay: rgba(0,0,0,0.5);
-        }
-
-        .medium.brand-nissan {
-            --red:           #4a90e2;
-            --red-light:     #1c2d42;
         }
 
         html, body { height: 100%; }
@@ -184,7 +172,7 @@
 
         .brand-btn.active[data-brand="porsche"] {
             background: var(--canvas);
-            color: var(--accent-porsche);
+            color: var(--red);
             box-shadow: var(--shadow-sm);
         }
 
@@ -637,7 +625,7 @@
             <button type="button" class="brand-btn" data-brand="nissan" onclick="switchBrand('nissan')">Nissan</button>
         </div>
         <div class="topbar-crumbs">
-            <span class="crumb" id="brandCrumbTitle"><span style="color:var(--accent-porsche);font-weight:600;">Porsche</span> Assistance</span>
+            <span class="crumb" id="brandCrumbTitle"><span style="color:var(--red);font-weight:600;">Porsche</span> Assistance</span>
             <span class="crumb-sep">/</span>
             <span class="crumb-active" id="topbarCrumb">Nieuw dossier</span>
         </div>
@@ -983,7 +971,7 @@
 
             const brandCrumb = document.getElementById('brandCrumbTitle');
             if (brand === 'porsche') {
-                brandCrumb.innerHTML = '<span style="color:var(--accent-porsche);font-weight:600;">Porsche</span> Assistance';
+                brandCrumb.innerHTML = '<span style="color:var(--red);font-weight:600;">Porsche</span> Assistance';
             } else {
                 brandCrumb.innerHTML = '<span style="color:var(--accent-nissan);font-weight:600;">Nissan</span> Assistance';
             }
