@@ -29,6 +29,25 @@ Dit is een gecombineerde webapplicatie (single-file HTML) voor het beheren en ve
 
 ---
 
+## 🚀 Installatie & Gebruik
+
+De applicatie kan op twee manieren worden gebruikt:
+
+### 1. Direct gebruiken via de computer (Offline / Lokaal)
+1. Download het bestand `index.html`.
+2. Sla het op een gewenste locatie op je PC op.
+3. Dubbelklik op het bestand om het direct te openen in een browser (Chrome, Edge, Safari, Firefox). 
+   *Er is geen internetverbinding of webserver nodig.*
+
+### 2. Installeren als Progressive Web App (PWA)
+Als de pagina wordt gehost via GitHub Pages (of een HTTPS-verbinding):
+- **Desktop (Chrome/Edge)**: Klik op het installatie-icoon aan de rechterkant van de adresbalk (of ga naar het menu `...` > *App installeren*) om de applicatie als een losse desktop-app te installeren.
+- **Mobiel / Tablet (iOS/Android)**: 
+  - **Safari (iOS)**: Tik op de *Delen*-knop en kies **'Zet op begintestcherm'**.
+  - **Chrome (Android)**: Tik op het menu met drie puntjes en kies **'Toevoegen aan startscherm'** of **'App installeren'**.
+
+---
+
 ## 📋 Technische details
 
 - **Bestandstype**: Single-file HTML (`index.html`) met vanilla JavaScript en ingebouwde CSS.
